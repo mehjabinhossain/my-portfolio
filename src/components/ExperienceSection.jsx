@@ -32,7 +32,7 @@ const experiences = [
   {
     role: "Senior Project Manager",
     company: "Ameri Lux",
-    period: "2024 – 2025",
+    period: "2025",
     description:
       "Managed Agile delivery of high-end digital solutions for a luxury brand using Jira for sprint planning and task tracking. Oversaw backend architecture and system integrations, including CRM and paid Outlook workflows. Led cross-functional teams and delivered real-time executive dashboards using Power BI.",
   },
