@@ -22,34 +22,34 @@ const experiences = [
     description:
       "I led the setup and customization of HR systems to match the company’s workflow. I managed the integration of HRIS with payroll, attendance, ERP, and recruitment tools using secure APIs. Also built automated workflows to handle onboarding, leave tracking, and performance reviews smoothly.",
   },
-  {
-    role: "Project Manager",
-    company: "DZ Construction",
-    period: "2024 – 2025",
-    description:
-      "Implemented Agile workflows using Jira. Oversaw cross-functional teams across marketing and operations while managing client agreements. Led end-to-end delivery of construction tech projects by integrating scheduling tools and digital reporting. Streamlined procurement, budgeting, and on-site coordination through centralized digital dashboards.",
-  },
-  {
-    role: "Senior Project Manager",
-    company: "Ameri Lux",
-    period: "2025",
-    description:
-      "Managed Agile delivery of high-end digital solutions for a luxury brand using Jira for sprint planning and task tracking. Oversaw backend architecture and system integrations, including CRM and paid Outlook workflows. Led cross-functional teams and delivered real-time executive dashboards using Power BI.",
-  },
-  {
-    role: "English Teacher",
-    company: "RDM English School",
-    period: "2024",
-    description:
-      "Created and taught English lessons focused on test prep and academic skills. Checked students' progress through regular evaluations and gave personalized feedback. Helped them improve in reading, writing, speaking, and listening, and guided them to reach their language goals.",
-  },
-  {
-    role: "SEO Executive",
+  { role: "SEO Executive",
     company: "eChithi",
     period: "2023 – 2024",
     description:
       "Led technical SEO campaigns, backlink optimization, and UX-driven content improvements.",
-  },
+  
+    },
+  { role: "English Teacher",
+    company: "RDM English School",
+    period: "2024",
+    description:
+      "Created and taught English lessons focused on test prep and academic skills. Checked students' progress through regular evaluations and gave personalized feedback. Helped them improve in reading, writing, speaking, and listening, and guided them to reach their language goals.",
+  
+    },
+  {role: "Project Manager",
+    company: "DZ Construction",
+    period: "2024 – 2025",
+    description:
+      "Implemented Agile workflows using Jira. Oversaw cross-functional teams across marketing and operations while managing client agreements. Led end-to-end delivery of construction tech projects by integrating scheduling tools and digital reporting. Streamlined procurement, budgeting, and on-site coordination through centralized digital dashboards.",
+
+   },
+  {role: "Senior Project Manager",
+    company: "Ameri Lux",
+    period: "2025",
+    description:
+      "Managed Agile delivery of high-end digital solutions for a luxury brand using Jira for sprint planning and task tracking. Oversaw backend architecture and system integrations, including CRM and paid Outlook workflows. Led cross-functional teams and delivered real-time executive dashboards using Power BI.",
+  
+   },
 ];
 
 const Card = ({ exp, delay }) => (
