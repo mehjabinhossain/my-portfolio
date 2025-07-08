@@ -43,74 +43,79 @@ export const ContactSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* Left: Contact Info */}
-          <div className="space-y-8">
-            <h3 className="text-3xl font-bold mb-6">Contact Information</h3>
+<div className="space-y-10 text-left">
+  <div>
+    <h3 className="text-3xl font-bold mb-6">Contact Information</h3>
 
-            <div className="space-y-6 justify-center">
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Mail className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-lg">Email</h4>
-                  <a
-                    href="mailto:mehjabinhossaineva@gmail.com"
-                    className="text-base md:text-lg text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    mehjabinhossaineva@gmail.com
-                  </a>
-                </div>
-              </div>
+    <div className="space-y-6">
+      <div className="flex items-start space-x-4">
+        <div className="p-3 rounded-full bg-primary/10">
+          <Mail className="h-6 w-6 text-primary" />
+        </div>
+        <div>
+          <h4 className="font-semibold text-lg md:text-xl">Email</h4>
+          <a
+            href="mailto:mehjabinhossaineva@gmail.com"
+            className="text-base md:text-lg text-muted-foreground hover:text-primary transition-colors"
+          >
+            mehjabinhossaineva@gmail.com
+          </a>
+        </div>
+      </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <Phone className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-lg">Phone</h4>
-                  <a
-                    href="tel:+01521111289"
-                    className="text-base md:text-lg text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    01521111289
-                  </a>
-                </div>
-              </div>
+      <div className="flex items-start space-x-4">
+        <div className="p-3 rounded-full bg-primary/10">
+          <Phone className="h-6 w-6 text-primary" />
+        </div>
+        <div>
+          <h4 className="font-semibold text-lg md:text-xl">Phone</h4>
+          <a
+            href="tel:+01521111289"
+            className="text-base md:text-lg text-muted-foreground hover:text-primary transition-colors"
+          >
+            01521111289
+          </a>
+        </div>
+      </div>
 
-              <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10">
-                  <MapPin className="h-6 w-6 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-lg">Location</h4>
-                  <span className="text-base md:text-lg text-muted-foreground">
-                    Keranigonj Dhaka, Bangladesh
-                  </span>
-                </div>
-              </div>
-            </div>
+      <div className="flex items-start space-x-4">
+        <div className="p-3 rounded-full bg-primary/10">
+          <MapPin className="h-6 w-6 text-primary" />
+        </div>
+        <div>
+          <h4 className="font-semibold text-lg md:text-xl">Location</h4>
+          <span className="text-base md:text-lg text-muted-foreground">
+            Keranigonj, Dhaka, Bangladesh
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
 
-            <div className="pt-8">
-              <h4 className="font-semibold text-lg mb-4">Connect With Me</h4>
-              <div className="flex space-x-4 justify-center text-2xl">
-                <a href="https://www.linkedin.com/in/mehjabin-hossain/" target="_blank">
-                  <Linkedin />
-                </a>
-                <a href="https://www.instagram.com/yellow_minance_23/" target="_blank">
-                  <Instagram />
-                </a>
-                <a href="https://www.facebook.com/slashymehu/" target="_blank">
-                  <Facebook />
-                </a>
-              </div>
-            </div>
-          </div>
+  <div>
+    <h3 className="text-3xl font-bold mb-8">Connect With Me</h3>
+
+
+    <div className="flex space-x-9 text-2xl">
+      <a href="https://www.linkedin.com/in/mehjabin-hossain/" target="_blank" rel="noreferrer">
+        <Linkedin size={30}/>
+      </a>
+      <a href="https://www.instagram.com/yellow_minance_23/" target="_blank" rel="noreferrer">
+        <Instagram size={30}/>
+      </a>
+      <a href="https://www.facebook.com/slashymehu/" target="_blank" rel="noreferrer">
+        <Facebook size={30}/>
+      </a>
+    </div>
+  </div>
+</div>
+
 
           {/* Right: Contact Form */}
-          <div className="bg-card p-8 rounded-lg shadow-xs" onSubmit={handleSubmit}>
+          <div className="bg-card p-8 rounded-lg shadow-xs">
             <h3 className="text-3xl font-bold mb-6">Send a Message</h3>
 
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-base md:text-lg font-medium mb-2">
                   Your Name
