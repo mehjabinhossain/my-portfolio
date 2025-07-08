@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 const skills = [
   // 🖥️ Frontend
-  { name: "HTML/CSS", level: 85, category: "frontend" },
+
   { name: "JavaScript", level: 80, category: "frontend" },
   { name: "React", level: 80, category: "frontend" },
   { name: "Tailwind CSS", level: 80, category: "frontend" },
@@ -17,15 +17,11 @@ const skills = [
   { name: "SQL / PostgreSQL", level: 80, category: "backend" },
   { name: "Node.js", level: 60, category: "backend" },
   { name: "Express (basic)", level: 55, category: "backend" },
-  { name: "MongoDB (basic)", level: 60, category: "backend" },
-  { name: "GraphQL (concepts)", level: 50, category: "backend" },
+
 
   // 🧰 Tools
-  { name: "VS Code", level: 90, category: "tools" },
   { name: "Figma", level: 75, category: "tools" },
-  { name: "MS Office Suite", level: 95, category: "tools" },
   { name: "Notion / Trello / Jira", level: 90, category: "tools" },
-
   { name: "HR Platforms (SAP/Workday)", level: 85, category: "tools" },
   { name: "SEMrush / Ahrefs / GA", level: 85, category: "tools" },
 ];
