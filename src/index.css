@@ -61,6 +61,24 @@
     }
   }
 }
+@layer utilities {
+  .group:hover .glow-border {
+    box-shadow: 0 0 20px 4px rgba(236, 72, 153, 0.3);
+  }
+}
+@keyframes gradient-x {
+  0%, 100% {
+    background-position: left center;
+  }
+  50% {
+    background-position: right center;
+  }
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 6s ease infinite;
+}
 
 @layer base {
   :root {

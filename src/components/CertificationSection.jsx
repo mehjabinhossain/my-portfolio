@@ -3,7 +3,7 @@ import { Code, Server, Crop, Cpu } from "lucide-react";
 const certifications = [
   {
     icon: <Code size={32} />,
-    image: "./projects/ux2.png",
+    image: " ux2.png",
     title: "UX Design Process: Empathize, Define, and Ideate",
     description:
       "This course guides you through the foundational steps of UX design. Through practical exercises, you'll learn to understand user perspectives and generate innovative ideas to address user challenges effectively",
