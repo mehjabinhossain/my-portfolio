@@ -14,7 +14,7 @@ export const HeroSection = () => {
             <span className="text-gradient ml-2 opacity-0 animate-fade-in-delay-2"> Hossain</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
+          <p className="text-lg text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
             I'm a driven and curious professional who thrives on solving challenges
             and finding smarter ways to work. For the past six years, I’ve led projects
             as a project manager, using a wide range of tools to keep things on track
