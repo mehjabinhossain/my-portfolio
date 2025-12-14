@@ -17,7 +17,7 @@ export const ResearchSection = () => {
         "Published in Springer’s SCI series, this chapter details federated learning techniques for secure leukemia detection from distributed medical images.",
       image: "./projects/2.png",
       link: "https://link.springer.com/book/9789819683529",
-    },
+    }, 
     {
       title:
         "A Multisectoral Study of Mpox Epidemiology, Resistance Surveillance, and Policy Gaps: Toward a One Health Framework",
