@@ -23,7 +23,7 @@ export const ResearchSection = () => {
         "A Multisectoral Study of Mpox Epidemiology, Resistance Surveillance, and Policy Gaps: Toward a One Health Framework",
       publisher: "Springer Nature journal",
       description:
-        "Officially accepted for publication in Clinical Reviews in Allergy & Immunology.    A Q1 Springer Nature journal with an Impact Factor of 11.3 and a CiteScore of 18. The paper has been accepted and is currently in the online publication process.",
+        "Officially accepted for publication in Clinical Reviews in Allergy & Immunology.A Q1 Springer Nature journal with an Impact Factor of 11.3 and a CiteScore of 18. The paper has been accepted and is currently in the online publication process.",
       image: "./projects/mpox.jpg",
       link: "./projects/mpox.jpg",
     },
