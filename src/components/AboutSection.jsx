@@ -17,15 +17,15 @@ export const AboutSection = () => {
             </h3>
 
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-              Meh As a tech-savvy and innovative professional with various certifications
+              As a tech-savvy and innovative professional with various certifications
               in the latest technology, I have a passion for exploring new ideas
-              and creating solutions.
+              and creating solutions. 
             </p>
 
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
               I'm passionate about creating elegant solutions to complex problems,
               and I'm constantly learning new technologies and techniques to stay
-              at the forefront of the ever-evolving web landscape.
+              at the forefront of the ever-evolving web landscape. Thus
             </p>
 
             <div className="pt-4">
