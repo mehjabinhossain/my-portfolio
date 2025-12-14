@@ -25,7 +25,7 @@ export const AboutSection = () => {
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
               I'm passionate about creating elegant solutions to complex problems,
               and I'm constantly learning new technologies and techniques to stay
-              at the forefront of the ever-evolving web landscape. Thus
+              at the forefront of the ever-evolving web landscape. 
             </p>
 
             <div className="pt-4">
