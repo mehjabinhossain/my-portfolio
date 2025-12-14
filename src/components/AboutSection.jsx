@@ -17,7 +17,7 @@ export const AboutSection = () => {
             </h3>
 
             <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-              As a tech-savvy and innovative professional with various certifications
+              Meh As a tech-savvy and innovative professional with various certifications
               in the latest technology, I have a passion for exploring new ideas
               and creating solutions.
             </p>
