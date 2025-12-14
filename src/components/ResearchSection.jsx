@@ -25,7 +25,7 @@ export const ResearchSection = () => {
       description:
         "Officially accepted for publication in Clinical Reviews in Allergy & Immunology.    A Q1 Springer Nature journal with an Impact Factor of 11.3 and a CiteScore of 18. The paper has been accepted and is currently in the online publication process.",
       image: "./projects/mpox.jpg",
-      //link: "https://ieeexplore.ieee.org/document/10966494",
+      link: "./projects/mpox.jpg",
     },
     {
       title:
@@ -34,7 +34,7 @@ export const ResearchSection = () => {
       description:
         "Officially accepted for publication in Clinical Reviews in Allergy & Immunology.    A Q1 Springer Nature journal with an Impact Factor of 11.3 and a CiteScore of 18. The paper has been accepted and is currently in the online publication process.",
       image: "./projects/dual.jpg",
-     // link: "https://ieeexplore.ieee.org/document/10966494",
+      link: "./projects/dual.jpg",
     },
   ];
 
