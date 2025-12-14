@@ -14,7 +14,7 @@ export const ResearchSection = () => {
         "Federated Learning Strategies for Confidential Leukemia Detection from Medical Images",
       publisher: "Springer Book Chapter in 'FL in Health Care Technology'",
       description:
-        "Published in Springer’s SCI series, this chapter details federated learning techniques for secure leukemia detection from distributed medical images.",
+        "Published in Springer’s SCI series, our chapter details federated learning techniques for secure leukemia detection from distributed medical images.",
       image: "./projects/2.png",
       link: "https://link.springer.com/book/9789819683529",
     }, 
