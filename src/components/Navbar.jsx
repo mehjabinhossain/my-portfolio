@@ -20,12 +20,24 @@ export const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.screenY > 10);
+      setIsScrolled(window.scrollY > 10);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // --- ADD THIS FUNCTION ---
+  const handleNavClick = (e, href) => {
+    e.preventDefault(); // Prevents "Not Found" routing error
+    const targetId = href.replace('#', '');
+    const elem = document.getElementById(targetId);
+    if (elem) {
+      elem.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMenuOpen(false); // Close mobile menu if open
+  };
+
   return (
     <nav
       className={cn(
@@ -37,10 +49,10 @@ export const Navbar = () => {
         <a
           className="text-xl font-bold text-primary flex items-center"
           href="#hero"
+          onClick={(e) => handleNavClick(e, "#hero")} // Add here
         >
           <span className="relative z-10">
-            <span className="text-glow text-foreground"> Mehjabin  Hossain </span>{" "}
-            Portfolio
+            <span className="text-glow text-foreground"> Mehjabin Hossain </span> Portfolio
           </span>
         </a>
 
@@ -50,6 +62,7 @@ export const Navbar = () => {
             <a
               key={key}
               href={item.href}
+              onClick={(e) => handleNavClick(e, item.href)} // Add here
               className="text-foreground/80 hover:text-primary transition-colors duration-300"
             >
               {item.name}
@@ -57,23 +70,21 @@ export const Navbar = () => {
           ))}
         </div>
 
-        {/* mobile nav */}
-
+        {/* mobile nav toggle */}
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}
           className="md:hidden p-2 text-foreground z-50"
           aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
         >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}{" "}
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
+        {/* mobile nav overlay */}
         <div
           className={cn(
-            "fixed inset-0 bg-background/95 backdroup-blur-md z-40 flex flex-col items-center justify-center",
+            "fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center",
             "transition-all duration-300 md:hidden",
-            isMenuOpen
-              ? "opacity-100 pointer-events-auto"
-              : "opacity-0 pointer-events-none"
+            isMenuOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
           )}
         >
           <div className="flex flex-col space-y-8 text-xl">
@@ -82,7 +93,7 @@ export const Navbar = () => {
                 key={key}
                 href={item.href}
                 className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={(e) => handleNavClick(e, item.href)} // Add here
               >
                 {item.name}
               </a>

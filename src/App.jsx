@@ -1,20 +1,17 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { NotFound } from "./pages/NotFound";
 import { Toaster } from "@/components/ui/toaster";
-
-
 
 function App() {
   return (
     <>
       <Toaster />
-      <BrowserRouter basename="/my-portfolio">
-        <Routes>
-          <Route index element={<Home />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
+      {/* ✅ Router removed! We use the HashRouter from main.jsx instead. */}
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </>
   );
 }
