@@ -28,11 +28,7 @@ export const AboutSection = () => {
               at the forefront of the ever-evolving web landscape. 
             </p>
 
-            <div className="pt-4">
-              <a href="#contact" className="cosmic-button transition hover:scale-105">
-                Get In Touch
-              </a>
-            </div>
+            
           </div>
 
           {/* RIGHT COLUMN: FEATURE CARDS */}
