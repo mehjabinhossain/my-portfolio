@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   try {
     // Connect to Gemini using the secure environment variable
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const model = genAI.getGenerativeModel({ model: "emini-pro" });
 
     // This "System Prompt" gives the AI its personality and your resume data
     const systemPrompt = `
