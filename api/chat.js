@@ -1,54 +1,56 @@
-// api/chat.js
-import { GoogleGenerativeAI } from "@google/generative-ai";
-export const runtime = "nodejs";
-
 export default async function handler(req, res) {
-  // Security: Allow only POST requests
+  // 1. Security: Allow only POST requests
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
   const { message } = req.body;
+  const apiKey = process.env.GEMINI_API_KEY;
+
+  if (!apiKey) {
+    return res.status(500).json({ error: "API Key is missing in Vercel Settings" });
+  }
 
   try {
-    // Connect to Gemini using the secure environment variable
-    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+    // 2. The Direct Connection (No Library Needed)
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
 
-    // This "System Prompt" gives the AI its personality and your resume data
+    // 3. The Prompt logic
     const systemPrompt = `
-      You are an AI assistant for Mehjabin Hossain's portfolio website. 
-      Your goal is to answer visitor questions professionally and enthusiastically.
+      You are Mehjabin Hossain's AI Portfolio Assistant.
+      Key Info:
+      - Role: Senior Project Manager at Ameri Lux (2025-Present).
+      - Skills: React, Tailwind, Python, SEO, Agile/Jira.
+      - Education: CSE Graduate (2025), Univ. of Asia Pacific.
+      - Contact: mehjabinhossaineva@gmail.com
       
-      HERE IS MEHJABIN'S CONTEXT:
-      - **Current Role:** Senior Project Manager at Ameri Lux (2025-Present) handling Agile delivery and Power BI dashboards.
-      - **Previous Experience:** - Project Manager at DZ Construction (2024-2025).
-        - HRIS Manager at BD Plus IT (2022-2023).
-        - SEO Executive at eChithi.
-      - **Education:** CSE Graduate (2025) from University of Asia Pacific.
-      - **Key Skills:** React, Tailwind CSS, Python, SEO, Project Management (Jira/Agile), HRIS Systems.
-      - **Featured Projects:** - "Pawsome Appointment" (Vet scheduling with React/Supabase).
-        - "Mistry Dot Com" (Service booking with Next.js).
-      - **Certifications:** Google UX Design, Computer Networking (Coursera).
-      - **Location:** Keranigonj, Dhaka, Bangladesh.
-      - **Contact:** mehjabinhossaineva@gmail.com | Phone: 01521111289.
-
-      User Question: ${message}
-      
-      Guidelines:
-      1. Keep answers concise (under 3 sentences unless asked for more).
-      2. Be friendly and professional.
-      3. If asked something not in this list, say "I don't have that specific info, but you can email Mehjabin directly!"
+      User asked: ${message}
+      Answer professionally and concisely.
     `;
 
-    const result = await model.generateContent(systemPrompt);
-    const response = await result.response;
-    const text = response.text();
+    // 4. Send the request using standard 'fetch'
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: systemPrompt }] }]
+      })
+    });
 
-    return res.status(200).json({ reply: text });
+    const data = await response.json();
+
+    // 5. Handle potential errors from Google
+    if (!response.ok) {
+      console.error("Gemini API Error:", data);
+      return res.status(response.status).json({ error: data.error?.message || "API Error" });
+    }
+
+    // 6. Extract the reply
+    const reply = data.candidates[0].content.parts[0].text;
+    return res.status(200).json({ reply });
 
   } catch (error) {
-    console.error("Error talking to Gemini:", error);
-    return res.status(500).json({ error: "Failed to fetch response" });
+    console.error("Server Error:", error);
+    return res.status(500).json({ error: "Internal Server Error" });
   }
 }
