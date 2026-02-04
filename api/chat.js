@@ -1,5 +1,6 @@
 // api/chat.js
 import { GoogleGenerativeAI } from "@google/generative-ai";
+export const runtime = "nodejs";
 
 export default async function handler(req, res) {
   // Security: Allow only POST requests
