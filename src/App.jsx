@@ -7,8 +7,12 @@ import { Chatbot } from "./components/Chatbot";
 function App() {
   return (
     <>
+      {/* ✅ FIX: Add the Chatbot component here so it actually renders */}
+      <Chatbot />
+
       <Toaster />
-      {/* ✅ Router removed! We use the HashRouter from main.jsx instead. */}
+      
+      {/* Router removed! We use the HashRouter from main.jsx instead. */}
       <Routes>
         <Route index element={<Home />} />
         <Route path="*" element={<NotFound />} />
@@ -18,7 +22,3 @@ function App() {
 }
 
 export default App;
-
-
-
-
