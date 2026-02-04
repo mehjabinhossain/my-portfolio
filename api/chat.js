@@ -1,4 +1,3 @@
-// api/chat.js
 export default async function handler(req, res) {
   // 1. Security: Allow only POST requests
   if (req.method !== "POST") {
@@ -6,17 +5,18 @@ export default async function handler(req, res) {
   }
 
   const { message } = req.body;
-  const apiKey = process.env.GEMINI_API_KEY;
+  
+  // Use the new OpenAI Key variable
+  const apiKey = process.env.OPENAI_API_KEY;
 
   if (!apiKey) {
-    console.error("API Key missing");
-    return res.status(500).json({ error: "Server Configuration Error" });
+    return res.status(500).json({ error: "API Key is missing in Vercel Settings" });
   }
 
   try {
-    // 2. Direct Connection to Gemini 1.5 Flash (No Library Needed)
-    // We use the REST API URL directly.
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
+    // 2. OpenAI API URL
+    const url = "https://api.openai.com/v1/chat/completions";
+
     // 3. The System Prompt (Your Resume Data)
     const systemPrompt = `
       You are Mehjabin Hossain's AI Portfolio Assistant.
@@ -36,25 +36,34 @@ export default async function handler(req, res) {
       - If the answer isn't in the profile, ask them to email Mehjabin.
     `;
 
-    // 4. Send the request using standard 'fetch'
+    // 4. Send request to OpenAI
     const response = await fetch(url, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { 
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`
+      },
       body: JSON.stringify({
-        contents: [{ parts: [{ text: systemPrompt }] }]
+        model: "gpt-3.5-turbo", // or "gpt-4" if you have access
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: message }
+        ],
+        temperature: 0.7
       })
     });
 
     const data = await response.json();
 
-    // 5. Handle potential errors from Google
+    // 5. Handle Errors
     if (!response.ok) {
-      console.error("Gemini API Error Details:", data);
-      return res.status(response.status).json({ error: data.error?.message || "AI Service Error" });
+      console.error("OpenAI API Error:", data);
+      return res.status(response.status).json({ error: data.error?.message || "API Error" });
     }
 
-    // 6. Extract the reply safely
-    const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "I'm thinking...";
+    // 6. Extract the reply (OpenAI structure is different from Gemini)
+    const reply = data.choices[0].message.content;
+    
     return res.status(200).json({ reply });
 
   } catch (error) {
