@@ -12,6 +12,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@google/generative-ai": "0.21.0",
     "@google/generative-ai": "^latest",
     "@google/generative-ai": "^0.24.1",
     "@radix-ui/react-toast": "^1.2.10",
