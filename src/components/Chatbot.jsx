@@ -30,7 +30,7 @@ export const Chatbot = () => {
 
     try {
       // 2. Call the Vercel Backend API (which talks to Gemini)
-      const response = await fetch("/api/chat", {
+      const response = await fetch("/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: userMsg.text }),
