@@ -16,8 +16,7 @@ export default async function handler(req, res) {
   try {
     // 2. Direct Connection to Gemini 1.5 Flash (No Library Needed)
     // We use the REST API URL directly.
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
-
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
     // 3. The System Prompt (Your Resume Data)
     const systemPrompt = `
       You are Mehjabin Hossain's AI Portfolio Assistant.
