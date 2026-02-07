@@ -84,46 +84,46 @@ export const ExperienceSection = () => {
 
         <div className="relative">
           {/* Animated line */}
-         <motion.svg
-  initial={{ pathLength: 0 }}
-  whileInView={{ pathLength: 1 }}
-  transition={{ duration: 2, ease: "easeInOut" }}
-  viewport={{ once: true }}
-  className="absolute top-0 left-0 w-full h-full pointer-events-none z-0"
-  fill="none"
-  viewBox="0 0 1000 600"
-  preserveAspectRatio="none"
->
-  {/* Path with arrow marker at the end */}
-  <motion.path
-    d="M 100 100 H 950 V 290 H 140 V 520 H 500"
-    stroke="url(#gradient)"
-    strokeWidth="2.5"
-    strokeLinecap="round"
-    markerEnd="url(#arrowhead)"
-  />
+          <motion.svg
+            initial={{ pathLength: 0 }}
+            whileInView={{ pathLength: 1 }}
+            transition={{ duration: 2, ease: "easeInOut" }}
+            viewport={{ once: true }}
+            className="absolute top-0 left-0 w-full h-full pointer-events-none z-0"
+            fill="none"
+            viewBox="0 0 1000 600"
+            preserveAspectRatio="none"
+          >
+            {/* Path with arrow marker at the end */}
+            <motion.path
+              d="M 100 100 H 950 V 290 H 140 V 520 H 500"
+              stroke="url(#gradient)"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              markerEnd="url(#arrowhead)"
+            />
 
-  <defs>
-    {/* Gradient for the stroke */}
-    <linearGradient id="gradient" x1="0" y1="0" x2="100%" y2="0">
-      <stop offset="0%" stopColor="#a855f7" />
-      <stop offset="100%" stopColor="#ec4899" />
-    </linearGradient>
+            <defs>
+              {/* Gradient for the stroke */}
+              <linearGradient id="gradient" x1="0" y1="0" x2="100%" y2="0">
+                <stop offset="0%" stopColor="#a855f7" />
+                <stop offset="100%" stopColor="#ec4899" />
+              </linearGradient>
 
-    {/* Arrowhead definition */}
-    <marker
-      id="arrowhead"
-      markerWidth="8"
-      markerHeight="8"
-      refX="6"
-      refY="3"
-      orient="auto"
-      markerUnits="strokeWidth"
-    >
-      <path d="M 0 0 L 6 3 L 0 6 Z" fill="#ec4899" />
-    </marker>
-  </defs>
-</motion.svg>
+              {/* Arrowhead definition */}
+              <marker
+                id="arrowhead"
+                markerWidth="8"
+                markerHeight="8"
+                refX="6"
+                refY="3"
+                orient="auto"
+                markerUnits="strokeWidth"
+              >
+                <path d="M 0 0 L 6 3 L 0 6 Z" fill="#ec4899" />
+              </marker>
+            </defs>
+          </motion.svg>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 auto-rows-auto relative z-10">
             {experiences.slice(0, 3).map((exp, index) => (

@@ -29,27 +29,40 @@ export const Chatbot = () => {
     setIsLoading(true);
 
     try {
-      // 2. Call the Vercel Backend API (which talks to Gemini)
-      const response = await fetch("https://my-portfolio-qgqi1cwsw-evas-projects-9418fd90.vercel.app/app/api/ask", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMsg.text }),
-      });
+      // Development mode: Use mock response
+      if (import.meta.env.DEV) {
+        // Simulate API delay
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        const mockReply =
+          "Hi! I'm working in development mode. To get real responses, deploy to Vercel with your OpenAI API key set in environment variables.";
+        setMessages((prev) => [...prev, { role: "ai", text: mockReply }]);
+      } else {
+        // 2. Call the Vercel Backend API (production)
+        const apiPath = `${import.meta.env.BASE_URL}api/ask`;
+        const response = await fetch(apiPath, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: userMsg.text }),
+        });
 
-      if (!response.ok) {
-        throw new Error(`API Error: ${response.status}`);
+        if (!response.ok) {
+          throw new Error(`API Error: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        // 3. Add AI Response to UI
+        setMessages((prev) => [...prev, { role: "ai", text: data.reply }]);
       }
-
-      const data = await response.json();
-
-      // 3. Add AI Response to UI
-      setMessages((prev) => [...prev, { role: "ai", text: data.reply }]);
     } catch (error) {
       console.error("Chat Error:", error);
       // Fallback error message for the user
       setMessages((prev) => [
-        ...prev, 
-        { role: "ai", text: "I'm having trouble connecting to the server right now. Please try again later." }
+        ...prev,
+        {
+          role: "ai",
+          text: "I'm having trouble connecting to the server right now. Please try again later.",
+        },
       ]);
     } finally {
       setIsLoading(false);

@@ -1,12 +1,22 @@
 export default async function handler(req, res) {
-  // 1. Security: Allow only POST requests
+  // 1. Set CORS Headers to allow cross-origin requests
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*'); 
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization');
+
+  // 2. Handle the "Preflight" (OPTIONS) request immediately
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
+  }
+
+  // 3. Security: Allow only POST requests for the actual chat
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
   const { message } = req.body;
-  
-  // Use the new OpenAI Key variable
   const apiKey = process.env.OPENAI_API_KEY;
 
   if (!apiKey) {
@@ -14,10 +24,9 @@ export default async function handler(req, res) {
   }
 
   try {
-    // 2. OpenAI API URL
     const url = "https://api.openai.com/v1/chat/completions";
 
-    // 3. The System Prompt (Your Resume Data)
+    // 4. The System Prompt (Updated with your profile data)
     const systemPrompt = `
       You are Mehjabin Hossain's AI Portfolio Assistant.
       
@@ -29,14 +38,12 @@ export default async function handler(req, res) {
       - **Contact:** mehjabinhossaineva@gmail.com | 01521111289.
       - **Location:** Keraniganj, Dhaka, Bangladesh.
 
-      User Question: ${message}
-      
       Instructions:
       - Answer professionally, briefly, and enthusiastically.
       - If the answer isn't in the profile, ask them to email Mehjabin.
     `;
 
-    // 4. Send request to OpenAI
+    // 5. Send request to OpenAI
     const response = await fetch(url, {
       method: "POST",
       headers: { 
@@ -44,7 +51,7 @@ export default async function handler(req, res) {
         "Authorization": `Bearer ${apiKey}`
       },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo", // or "gpt-4" if you have access
+        model: "gpt-3.5-turbo",
         messages: [
           { role: "system", content: systemPrompt },
           { role: "user", content: message }
@@ -55,15 +62,12 @@ export default async function handler(req, res) {
 
     const data = await response.json();
 
-    // 5. Handle Errors
     if (!response.ok) {
       console.error("OpenAI API Error:", data);
       return res.status(response.status).json({ error: data.error?.message || "API Error" });
     }
 
-    // 6. Extract the reply (OpenAI structure is different from Gemini)
     const reply = data.choices[0].message.content;
-    
     return res.status(200).json({ reply });
 
   } catch (error) {

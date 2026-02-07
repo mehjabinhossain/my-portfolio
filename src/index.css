@@ -179,33 +179,17 @@
   padding: 0;
   text-align: center;
 }
-/* Debugging & Force-Visibility for Chatbot */
+/* Chatbot positioning and z-index */
 .chatbot-container, 
-#chatbot-root,
-[class*="chatbot"] {
-  position: fixed !important;
-  bottom: 2rem !important;
-  right: 2rem !important;
-  
-  /* The "Z-Index" solution: ensure it's higher than stars/meteors */
-  z-index: 99999 !important; 
-  
-  /* The "Dark Mode" solution: Force a visible background and border */
-  background-color: white !important;
-  border: 2px solid hsl(var(--primary)) !important;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3) !important;
-  
-  /* Reset any accidental fade-out or hidden states */
-  display: flex !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-  pointer-events: auto !important;
+#chatbot-root {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
 }
 
-/* If your bot uses an icon that is disappearing */
-.chatbot-container svg, 
-.chatbot-container img {
-  filter: none !important;
-  opacity: 1 !important;
-  display: block !important;
+/* Floating button styling */
+.chatbot-container button {
+  position: relative;
+  z-index: 50;
 }
