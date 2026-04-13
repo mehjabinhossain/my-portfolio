@@ -15,14 +15,7 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-lg text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            I'm a driven and curious professional who thrives on solving challenges
-            and finding smarter ways to work. For the past six years, I’ve led projects
-            as a project manager, using a wide range of tools to keep things on track
-            and deliver results that matter. I specialize in technical work, especially
-            SEO, where I help boost online visibility and engagement. Teaching is
-            another big part of who I am. I love sharing what I know and making
-            complex ideas easier to understand. Above all, I value honesty,
-            collaboration, and doing work I can be proud of.
+           I am a CSE graduate and and have experience where I mix high-level research with real-world system management. I’ve published first-author papers in IEEE and Springer Nature  focusing on tech like Explainable AI, Machine Learning, Blockchain and Federated Learning. I’m all about building tech you can actually trust. When I’m not auditing logic or coding, you’ll probably find me exploring new cities and hunting for the best local food.
           </p>
 
           

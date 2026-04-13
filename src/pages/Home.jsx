@@ -25,11 +25,13 @@ export const Home = () => {
       <main>
         <HeroSection />
         <AboutSection />
-        <ExperienceSection />
-        <SkillsSection />
         <ResearchSection />
-        <ProjectsSection />
+        <ExperienceSection />
         <CertificationSection />
+        <ProjectsSection />
+ 
+        <SkillsSection />
+        
         <ExplorerSection />
         <ContactSection />
       </main>

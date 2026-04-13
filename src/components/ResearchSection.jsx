@@ -5,7 +5,7 @@ export const ResearchSection = () => {
         "From Centralization to Decentralization: Blockchain’s Role in Transforming Social Media Platforms",
       publisher: "IEEE Access (Scopus Q1)",
       description:
-        "Published in IEEE Access, this paper explores blockchain’s role in decentralizing social media platforms, enhancing privacy, and user governance.",
+        "Published in IEEE Access (Scopus Q1), this research explores the architectural shift from centralized social media systems to decentralized blockchain-based frameworks. My contribution involved analyzing the technical protocols for privacy-preserving user governance and the integration of blockchain to mitigate data centralization risks",
       image: "./projects/1.png",
       link: "https://ieeexplore.ieee.org/document/10966494",
     },
@@ -14,25 +14,25 @@ export const ResearchSection = () => {
         "Federated Learning Strategies for Confidential Leukemia Detection from Medical Images",
       publisher: "Springer Book Chapter in 'FL in Health Care Technology'",
       description:
-        "Published in Springer’s SCI series, our chapter details federated learning techniques for secure leukemia detection from distributed medical images.",
-      image: "./projects/2.png",
-      link: "https://link.springer.com/book/9789819683529",
+        "Published as a full chapter in the Springer series 'Studies in Computational Intelligence' (Scopus & DBLP Indexed). This research explores the application of Federated Learning (FL) to enable decentralized, privacy-preserving leukemia detection. Without compromising patient confidentiality this work bridges the gap between Explainable AI (XAI) and healthcare security, demonstrating my proficiency in architecting secure, collaborative machine learning frameworks for sensitive diagnostic data.",
+      image: "./projects/Federated.png",
+      link: "https://link.springer.com/chapter/10.1007/978-981-96-8353-6_6",
     }, 
     {
       title:
         "A Multisectoral Study of Mpox Epidemiology, Resistance Surveillance, and Policy Gaps: Toward a One Health Framework",
       publisher: "Springer Nature journal",
       description:
-        "Officially accepted for publication in Clinical Reviews in Allergy & Immunology.A Q1 Springer Nature journal with an Impact Factor of 11.3 and a CiteScore of 18. The paper has been accepted and is currently in the online publication process.",
-      image: "./projects/mpox.jpg",
-      link: "./projects/mpox.jpg",
+        "Officially accepted for publication in Clinical Reviews in Allergy & Immunology.A Q1 Springer Nature journal with an Impact Factor of 11.3 and a CiteScore of 18.My contribution focused on the systematic analysis of large-scale epidemiological data and 'One Health' framework to model Mpox epidemiology and identify critical resistance surveillance gaps.",
+      image: "./projects/springer.png",
+      link: "https://link.springer.com/article/10.1007/s12016-025-09121-7",
     },
     {
       title:
         "Dual-Head Deep Learning Framework for Automated Skin Disease Detection and Cancer Classification with Explainable AI Support",
       publisher: "IEEE ICCIT",
       description:
-        "Officially accepted for publication in Clinical Reviews in Allergy & Immunology.    A Q1 Springer Nature journal with an Impact Factor of 11.3 and a CiteScore of 18. The paper has been accepted and is currently in the online publication process.",
+        "This research, accepted for presentation at ICCIT 2025 introduces a novel Dual-Head Deep Learning framework based on EfficientNetV2-S. The architecture is uniquely engineered to perform simultaneous multi-class disease classification and binary malignancy detection with the integration of Explainable AI (XAI) using Grad-CAM++. The system achieved 94% accuracy in disease classification and 97% in cancer detection on the given dataset.",
       image: "./projects/dual.jpg",
       link: "./projects/dual.jpg",
     },
@@ -67,8 +67,8 @@ export const ResearchSection = () => {
         Mehjabin Hossain
       </h3>
       <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
-        A creative and results-driven individual blending <span className="text-white font-medium">HR, SEO, and technology expertise</span>. Currently pursuing her bachelor’s degree, she’s passionate about education, innovation, and research. Recently co-authored a chapter on <span className="text-white font-medium">federated learning in healthcare</span>, published in a Springer volume.
-      </p>
+       I’ve published first-author papers in IEEE and Springer Nature focusing on tech like Explainable AI, Machine Learning, Blockchain and Federated Learning. I’m all about building tech you can actually trust.
+       </p>
 
       {/* 🔗 IEEE Profile Button */}
       <a

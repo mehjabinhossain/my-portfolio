@@ -36,27 +36,28 @@ export const AboutSection = () => {
             {[
               {
                 icon: <Code className="h-6 w-6 text-primary" />,
-                title: "Project Management",
-                description: "Leading projects from conception to completion with agile methodologies.",
+                title: "Researcher & Author",
+                description: "Lead multiple research projects published in IEEE and Springer Nature, focusing on Explainable AI, Machine Learning, Blockchain, and Federated Learning.",
               },
               {
                 icon: <Briefcase className="h-6 w-6 text-primary" />,
-                title: "HR Information Systems (HRIS) Manager",
+                title: "Project Lead",
+                description:
+                  "Led cross-functional teams to deliver complex projects on time and within budget, utilizing agile methodologies and strong communication skills.",
+              },
+              {
+                icon: <Briefcase className="h-6 w-6 text-primary" />,
+                title: "HRIS Implementation Specialist",
                 description:
                   "Specializing in the design, implementation, and management of integrated HR systems to automate workflows, ensure data integrity, and deliver analytics-driven workforce solutions.",
               },
               {
                 icon: <User className="h-6 w-6 text-primary" />,
-                title: "Organic Growth & SEO Strategist",
+                title: "SEO Analyst & Strategist",
                 description:
                   "Adds a growth focus on online visibility, aligning with business metrics and marketing KPIs.",
               },
-              {
-                icon: <Briefcase className="h-6 w-6 text-primary" />,
-                title: "Academic English Instructor",
-                description:
-                  "Highlights focus on reading, writing, listening, and speaking for academic and professional goals.",
-              },
+              
             ].map((card, index) => (
               <div
                 key={index}
