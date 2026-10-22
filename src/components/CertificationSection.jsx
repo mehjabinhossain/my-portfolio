@@ -87,7 +87,7 @@ const ACADEMIC = [
     host: "Academic Affairs Division, UAP",
     issueDate: "May 21, 2026",
     year: 2025,
-    image: "public\projects\Spring Semester, 2025.jpg",
+    image: "./projects/Spring Semester, 2025.jpg",
     badge: "Dean's List",
     badgeColor: "from-emerald-400 to-teal-500",
     description: "Awarded for academic performance in the Spring 2025 semester of the BSc in Computer Science and Engineering. The Dean's List is conferred on students who achieve a semester GPA between 3.75 and 3.89.",
