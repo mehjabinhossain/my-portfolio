@@ -32,7 +32,7 @@ export const ExplorerSection = () => {
           transition={{ delay: 0.2, duration: 1 }}
           className="text-lg md:text-xl text-muted-foreground text-center mb-20 max-w-3xl mx-auto leading-relaxed"
         >
-And also i'm a total foodie who loves trying out new resturants and all kinds of cruisines. From street eats to fancy dishes, I’m always down to taste something new and snap a pic before digging in. These photos are just a peek into my food adventures — if it looks good, you can bet I’ve tried it (or I’m about to). 🍜🍰
+And also i'm a total foodie who loves trying out new resturants and all kinds of cruisines. From street eats to fancy dishes, I’m always down to taste something new and snap a pic before digging in. These photos are just a peek into my food adventures if it looks good, you can bet I’ve tried it (or I’m about to). 🍜🍰
         </motion.p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

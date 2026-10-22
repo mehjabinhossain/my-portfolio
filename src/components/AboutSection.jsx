@@ -41,15 +41,15 @@ export const AboutSection = () => {
               },
               {
                 icon: <Briefcase className="h-6 w-6 text-primary" />,
-                title: "Project Lead",
+                title: "Data Analyst",
                 description:
                   "Led cross-functional teams to deliver complex projects on time and within budget, utilizing agile methodologies and strong communication skills.",
               },
               {
                 icon: <Briefcase className="h-6 w-6 text-primary" />,
-                title: "HRIS Implementation Specialist",
+                title: "Project Coordinator",
                 description:
-                  "Specializing in the design, implementation, and management of integrated HR systems to automate workflows, ensure data integrity, and deliver analytics-driven workforce solutions.",
+                  "Managed operational data pipelines connecting field level site diaries with executive reporting tools.",
               },
               {
                 icon: <User className="h-6 w-6 text-primary" />,

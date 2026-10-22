@@ -59,7 +59,7 @@ export const WelcomePopup = () => {
               onClick={() => setVisible(false)}
               className="absolute top-4 right-4 z-10 p-2 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all hover:scale-110"
             >
-              <X size={20} />
+           
             </button>
 
             {/* Content */}
@@ -104,12 +104,12 @@ export const WelcomePopup = () => {
               >
                 <p>
                   Thank you for visiting my portfolio. I'm{" "}
-                  <span className="font text-white">Mehjabin Hossain</span> a CSE graduate from the University of Asia Pacific, passionate about technology and building meaningful digital experiences.
+                  <span className="font text-white">Mehjabin Hossain,</span> a CSE graduate from the University of Asia Pacific, passionate about technology and building meaningful digital experiences.
                 </p>
                 <p className="text-xl text-slate-400">
                   Everything you see here every section, animation, and interaction was{" "}
                   <span className="text-pink-400 font-semibold">entirely hand-coded by me</span>, built from the ground up using{" "}
-                  <span className="text-violet-400 font-semibold">React, Tailwind CSS, and Vite</span>. No templates. No shortcuts.
+                  <span className="text-violet-400 font-semibold">React, Tailwind CSS, and Vite</span>. 
                 </p>
               </motion.div>
 
@@ -140,9 +140,11 @@ export const WelcomePopup = () => {
                 transition={{ delay: 0.9 }}
                 className="flex items-center justify-between"
               >
-                <p className="text-lg text-slate-500 italic" style={{ fontFamily: "'Georgia', serif" }}>
-                  Scroll to explore my full journey →
-                </p>
+                      <p className="text-lg text-slate-500 italic" style={{ fontFamily: "'Georgia', serif" }}>
+                  Scroll to explore
+                <br /> 
+                my full journey →
+                  </p>
                 <button
                   onClick={() => setVisible(false)}
                   className="px-5 py-2.5 rounded-xl text-xl font-bold text-white transition-all hover:scale-120 active:scale-95 shadow-lg"
