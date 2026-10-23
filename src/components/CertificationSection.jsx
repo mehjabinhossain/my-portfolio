@@ -46,7 +46,7 @@ const ACADEMIC = [
     badge: "VC's List",
     badgeColor: "from-amber-400 to-orange-500",
     description: "Awarded for academic performance in the Fall 2022 semester of the BSc in Computer Science and Engineering. The Vice Chancellor's List is conferred on students who achieve a semester GPA of 3.90 or above.",
-    significance: "The highest academic distinction conferred at UAP.",
+    significance: "Recognises exceptional academic achievements among undergraduate students.",
     tags: ["Academic Excellence", "Fall 2022", "GPA Honours"],
   },
   {
@@ -61,7 +61,7 @@ const ACADEMIC = [
     badge: "VC's List",
     badgeColor: "from-amber-400 to-orange-500",
     description: "Awarded for academic performance in the Fall 2023 semester of the BSc in Computer Science and Engineering. The Vice Chancellor's List is conferred on students who achieve a semester GPA of 3.90 or above.",
-    significance: "The pinnacle of academic recognition at UAP reserved for only the very best performers.",
+    significance: "Recognises exceptional academic achievements among undergraduate students.",
     tags: ["Academic Excellence", "Fall 2023", "GPA Honours"],
   },
   {
@@ -76,7 +76,7 @@ const ACADEMIC = [
     badge: "Dean's List",
     badgeColor: "from-emerald-400 to-teal-500",
     description: "Awarded for academic performance in the Spring 2024 semester of the BSc in Computer Science and Engineering. The Dean's List is conferred on students who achieve a semester GPA between 3.75 and 3.89.",
-    significance: "Recognises top-ranking students within the faculty for academic merit.",
+    significance: "Recognises exceptional academic achievements among undergraduate students.",
     tags: ["Academic Excellence", "Spring 2024", "GPA Honours"],
   },
   {
@@ -110,7 +110,7 @@ const RESEARCH = [
     badge: "Published Research",
     badgeColor: "from-rose-500 to-pink-600",
     paperTitle: "Dual Head Deep Learning Framework for Automated Skin Disease Detection and Cancer Classification with Explainable Support",
-    description: "Presented our thesis research at the most prestigious IEEE Bangladesh Section conference. The paper introduces a novel dual-head deep learning architecture that simultaneously classifies skin conditions and detects cancerous lesions with XAI support for clinical transparency.",
+    description: "Presented our thesis research at ICCIT 2025, a peer-reviewed IEEE conference. The paper introduces a dual-head deep learning architecture that simultaneously classifies skin conditions and detects cancerous lesions, with XAI support for clinical transparency.",
     significance: "International peer-reviewed publication demonstrating research capability in AI and healthcare technology.",
     tags: ["Deep Learning", "Computer Vision", "Healthcare AI", "XAI", "Cancer Detection"],
   },
@@ -152,7 +152,7 @@ const PROFESSIONAL = [
     title: "The Bits and Bytes of Computer Networking",
     issuer: "Google",
     host: "Coursera",
-    date: "Oc t 18 , 2021",
+    date: "October 18, 2021",
     year: 2021,
     image: "./projects/bitsofpc.jpeg",
     badge: "Google Certified",
@@ -191,9 +191,24 @@ const LEADERSHIP = [
     image: "./projects/Basis .jpg",
     badge: "Leadership Role",
     badgeColor: "from-violet-500 to-purple-600",
-    description: "Formally appointed as Co-Convener of the BASIS Student Forum at UAP responsible for organising industry-academia events, tech workshops, and building bridges between students and Bangladesh's software sector.",
+    description: "Formally appointed as Co-Convener of the BASIS Student Forum at UAP, responsible for organising industry-academia events, tech workshops, and building bridges between students and Bangladesh's software sector.",
     significance: "A formal leadership appointment by a national ICT industry body.",
     tags: ["Leadership", "Tech Community", "Governance", "BASIS"],
+  },
+  {
+    id: "l2",
+    title: "Class Representative| CSE Forum, University of Asia Pacific (UAP)",
+    subtitle: " Fall 2021 – Spring 2025",
+    issuer: "CSE Forum, University of Asia Pacific (UAP)",
+    host: "CR and Club Farewell Ceremony, CSE Forum",
+    date: "20-06-2026", // replace with the ceremony date, e.g. "December 10, 2025"
+    year: 2025,
+    image: "./projects/CR.jpg",
+    badge: "Leadership Role",
+    badgeColor: "from-violet-500 to-purple-600",
+    description: "Served as the Class Representative for four consecutive years, bridging the gap between student cohorts, faculty members, and academic administration. Successfully fulfilled all core leadership and operational duties to foster an efficient and supportive academic environment.",
+    significance: "Acknowledges student leadership and service to the department.",
+    tags: ["Leadership", "Spring 2025", "Class Representative"],
   },
 ];
 
@@ -533,7 +548,6 @@ const HorizontalTimeline = ({ certs, accentHex, onOpen }) => (
       <motion.div
         initial={{ scaleX: 0 }} whileInView={{ scaleX: 1 }} viewport={{ once: true }}
         transition={{ duration: 1.4, ease: "easeInOut" }}
-        
         className="absolute top-[72px] left-[7%] right-[7%] h-px origin-left"
         style={{ background: `linear-gradient(to right, ${accentHex}, ${accentHex}40)` }}
       />
@@ -672,7 +686,6 @@ export const CertificationSection = () => {
           <p className="text-sm font-black uppercase tracking-[0.45em] text-violet-400 mb-4">✦ Full Academic Record ✦</p>
           <h2 className="text-5xl md:text-6xl font-black leading-tight mb-5">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-pink-400 to-rose-400">Certifications and Honours</span>
-    
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed mb-12">
             A comprehensive record of professional credentials, academic distinctions, research contributions, and extracurricular achievements across my undergraduate journey at the University of Asia Pacific.
@@ -696,31 +709,70 @@ export const CertificationSection = () => {
           </div>
         </motion.div>
 
-        {/* TABS */}
-        <div className="flex flex-wrap justify-center gap-2.5 mb-14">
-          {TABS.map(({ id, label, Icon, data, accent }) => {
-            const isActive = activeTab === id;
-            return (
-              <motion.button key={id} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}
-                onClick={() => setActiveTab(id)}
-                className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold border transition-all duration-200"
-                style={isActive ? {
-                  background: `linear-gradient(135deg, ${accent}30, ${accent}15)`,
-                  borderColor: `${accent}60`, color: accent,
-                  boxShadow: `0 0 24px ${accent}28`,
-                } : {
-                  background: "rgba(255,255,255,0.04)",
-                  borderColor: "rgba(255,255,255,0.1)", color: "#94a3b8",
-                }}>
-                <Icon size={15} />
-                {label}
-                <span className="text-xl px-1.5 py-0.5 rounded-full"
-                  style={{ background: isActive ? `${accent}30` : "rgba(255,255,255,0.08)", color: isActive ? accent : "#64748b" }}>
-                  {data.length}
-                </span>
-              </motion.button>
-            );
-          })}
+            {/* TABS */}
+        <div className="mb-14">
+          <p className="text-center font-black uppercase tracking-[0.35em] mb-7" style={{ fontSize: "1.15rem" }}>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-pink-400 to-rose-400">
+              ✦ Browse by Category ✦
+            </span>
+          </p>
+
+          <div
+            className="relative mx-auto w-fit max-w-full p-[2px] rounded-[2.5rem] transition-all duration-500"
+            style={{ background: `linear-gradient(135deg, ${accentHex}90, rgba(255,255,255,0.08) 40%, rgba(255,255,255,0.08) 60%, ${accentHex}90)` }}
+          >
+            <div
+              className="flex flex-wrap justify-center gap-3 p-4 rounded-[2.5rem] bg-[#0b1022]/95 backdrop-blur-xl"
+              style={{ boxShadow: `0 0 70px ${accentHex}35, inset 0 1px 0 rgba(255,255,255,0.06)` }}
+            >
+              {TABS.map(({ id, label, Icon, data, accent }) => {
+                const isActive = activeTab === id;
+                return (
+                  <motion.button
+                    key={id}
+                    onClick={() => setActiveTab(id)}
+                    whileHover={{ y: -3 }}
+                    whileTap={{ scale: 0.96 }}
+                    className="relative flex items-center rounded-full font-bold transition-colors duration-200"
+                    style={{
+                      color: isActive ? "#ffffff" : "#cbd5e1",
+                      fontSize: "1.4rem",
+                      padding: "0.9rem 1.6rem",
+                    }}
+                  >
+                    {isActive && (
+                      <motion.span
+                        layoutId="activeTabPill"
+                        className="absolute inset-0 rounded-full"
+                        style={{
+                          background: `linear-gradient(135deg, ${accent}, ${accent}99)`,
+                          boxShadow: `0 0 32px ${accent}75, 0 8px 24px ${accent}45`,
+                        }}
+                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                      />
+                    )}
+
+                    <span className="relative z-10 flex items-center" style={{ fontSize: "1.4rem", gap: "0.75rem" }}>
+                      <Icon size={27} style={{ color: isActive ? "#ffffff" : accent }} />
+                      {label}
+                      <span
+                        className="font-black text-center rounded-full"
+                        style={{
+                          background: isActive ? "rgba(255,255,255,0.25)" : `${accent}22`,
+                          color: isActive ? "#ffffff" : accent,
+                          fontSize: "1.25rem",
+                          minWidth: "2.6rem",
+                          padding: "0.15rem 0.75rem",
+                        }}
+                      >
+                        {data.length}
+                      </span>
+                    </span>
+                  </motion.button>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
         {/* CONTENT */}
@@ -729,16 +781,16 @@ export const CertificationSection = () => {
             initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -24 }} transition={{ duration: 0.35 }}>
 
-            <p className="text-center text-slate-500 text-base mb-12 flex items-center justify-center gap-3">
+            <p className="text-center text-slate-500 text-lg mb-12 flex items-center justify-center gap-3">
               <span className="h-px w-16 bg-white/10 inline-block" />
-              {currentTab.data.length} credential{currentTab.data.length !== 1 ? "s" : ""} · Sorted from oldest to newest one· Click any card to expand
+              {currentTab.data.length} credential{currentTab.data.length !== 1 ? "s" : ""} · Sorted oldest to newest · Click any card to expand
               <span className="h-px w-16 bg-white/10 inline-block" />
             </p>
 
             {activeTab === "academic"     && <HorizontalTimeline certs={ACADEMIC}     accentHex={accentHex} onOpen={setSelectedCert} />}
             {activeTab === "research"     && <div className="max-w-xl mx-auto">{RESEARCH.map(c => <StandardCard key={c.id} cert={c} accentHex={accentHex} onOpen={setSelectedCert} />)}</div>}
             {activeTab === "professional" && <div className="grid grid-cols-1 sm:grid-cols-2 gap-7">{PROFESSIONAL.map(c => <StandardCard key={c.id} cert={c} accentHex={accentHex} onOpen={setSelectedCert} />)}</div>}
-            {activeTab === "leadership"   && <div className="max-w-xl mx-auto">{LEADERSHIP.map(c => <StandardCard key={c.id} cert={c} accentHex={accentHex} onOpen={setSelectedCert} />)}</div>}
+            {activeTab === "leadership"   && <div className="grid grid-cols-1 sm:grid-cols-2 gap-7">{LEADERSHIP.map(c => <StandardCard key={c.id} cert={c} accentHex={accentHex} onOpen={setSelectedCert} />)}</div>}
             {activeTab === "competitions" && <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">{COMPETITIONS.map(c => <StandardCard key={c.id} cert={c} accentHex={accentHex} onOpen={setSelectedCert} />)}</div>}
             {activeTab === "volunteering" && <div className="grid grid-cols-1 sm:grid-cols-2 gap-7">{VOLUNTEERING.map(c => <StandardCard key={c.id} cert={c} accentHex={accentHex} onOpen={setSelectedCert} />)}</div>}
 
