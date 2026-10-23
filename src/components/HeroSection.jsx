@@ -15,7 +15,7 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-lg text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-          I am a Computer Science and Engineering graduate from the University of Asia Pacific with a focus on trustworthy AI for healthcare and engineering. During my undergraduate studies I published five peer-reviewed papers, including a first-author paper presented at IEEE ICCIT 2025, and co-authored work in a Q1 Springer Nature journal (Impact Factor 11.3), IEEE Access (Scopus Q1) and Springer’s Scopus-indexed Studies in Computational Intelligence. I was named to the Vice Chancellor’s List twice and the Dean’s List, and won various awards thoughout my entire study journey. Alongside my studies, I served as Class Representative for four years, was Co-Convener of the BASIS Student Forum, and gained remote industry experience from US-based companies</p>
+          I am a Computer Science and Engineering graduate from the University of Asia Pacific with a focus on trustworthy AI for healthcare and engineering. During my undergraduate studies I published five peer-reviewed papers, including a first-author paper presented at IEEE ICCIT 2025, and co-authored work in a Q1 Springer Nature journal (Impact Factor 11.3), IEEE Access (Scopus Q1) and Springer’s Scopus-indexed Studies in Computational Intelligence. I was named to the Vice Chancellor’s List twice and the Dean’s List, and won various awards throughout my entire study journey. Alongside my studies, I served as Class Representative for four years, was Co-Convener of the BASIS Student Forum, and gained remote industry experience from US-based companies</p>
 
           
         </div>
