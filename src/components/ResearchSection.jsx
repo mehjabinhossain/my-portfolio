@@ -38,7 +38,7 @@ export const ResearchSection = () => {
       description:
         "Introduces a novel Dual-Head Deep Learning framework based on EfficientNetV2-S, performing simultaneous multi-class disease classification and binary malignancy detection with Grad-CAM++ integration. Achieved 94% accuracy in disease classification and 97% in cancer detection.",
       image: "./projects/Dual Head.jpg",
-      link: "https://ieeexplore.ieee.org/document/11491710/authors#authors",
+      link: "https://ieeexplore.ieee.org/document/11491710",
     },
     {
       title:
